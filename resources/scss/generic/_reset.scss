@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+	//-webkit-appearance: none;
+	border-radius: 0;
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, m {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight:200;
+}
+
+br {
+	padding: 0;
+}
+
+input {
+    font-family: $textFont;
+}
+
+/*********************************************
+  UTILS
+*********************************************/
+* {
+	box-sizing: border-box;
+}
+
+img {
+	position: relative;
+	display: block;
+	//margin: auto;
+	max-width: 100%;
+	//width: auto; // commented for tinymce dispplay in admin..
+	height:auto;
+}
+
+main, svg, button {
+	padding: 0;
+}
+
+strong {
+	font-weight: bold;
+}
+
+main {
+	display: block;
+}
+
+select {
+	border: none;
+	width: 100%;
+}
+
+strong, em, i, b {
+	display: inline-block;
+}
+
+
+div, p, li, td, th, label, a {
+	font-family: $textFont;
+	font-size: $normal;
+	line-height: 1.6em;
+	font-weight: 200;
+	color: $text;
+}
+
+a {
+	text-decoration: none;
+	overflow-wrap: anywhere; // avoid break columns styles with long text href
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $titleFont;
+}
+
+h1, h1 > a {
+	font-family: $titleFont;
+	font-size: $xxx-large;
+	line-height: 1.2em;
+	font-weight: 200;
+}
+h2, h2 > a {
+	font-family: $titleFont;
+	font-size: $xx-large;
+	line-height: 1.2em;
+	font-weight: 200;
+}
+
+h3, h3 > a {
+	font-family: $titleFont;
+	font-size: $large;
+	line-height: 1.2em;
+	font-weight: 200;
+}
+
+h4, h4 > a {
+	font-family: $titleFont;
+	font-size: $normal;
+	line-height: 1.2em;
+	font-weight: 200;
+}
+
+body {
+	min-width: 360px;
+}
+
+div, section {
+	position: relative;
+}
+
+// --- CLASS
+.hide, .hidden {
+	display: none;
+}
+
+/*********************************************
+ 	CAPTCHA
+*********************************************/
+.captcha {
+	text-align: center;
+	margin-top: 20px;
+	position: relative;
+	height: 80px;
+	width: 310px;
+
+	// for instruction text
+	overflow: hidden;
+	//color: transparent;
+	color: $black;
+
+	.g-recaptcha {
+		text-align: center;
+		margin:auto;
+		display: inline-block;
+
+		> div {
+			right: 0;
+		}
+	}
+}
+
+/*********************************************
+  INPUT
+*********************************************/
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear,
+input[type=search]::-ms-reveal {
+    display: none;
+    width : 0;
+    height: 0;
+    appearance: none;
+    -moz-appearance: none;
+}
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+//TODO lucas
+/*********************************************
+  WRAPPER
+*********************************************/
+.wrapper {
+	// 1560
+	position: relative;
+	max-width: 1560px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+
+	@media screen and (max-width: 1660px) {  // 1560 + 2*50p
+		max-width: none;
+		width: 100%;
+		padding: 0px 50px;
+	}
+
+	&--small {
+		// 1440
+		max-width: 1440px;
+		padding: 0px;
+
+		@media screen and (max-width: 1540px) { // 1440 + 2*50p
+			max-width: none;
+			padding: 0px 50px;
+		}
+	}
+
+	&--smaller {
+		// 1080
+		max-width: 1080px;
+		padding: 0px;
+
+		@media screen and (max-width: 1180px) { // 1080 + 2*50p
+			max-width: none;
+			padding: 0px 50px;
+		}
+	}
+
+	&--text {
+		// 860
+		max-width: 860px;
+		padding: 0px;
+
+		@media screen and (max-width: 960px) { // 860 + 2*50p
+			max-width: none;
+			padding: 0px 50px;
+		}
+	}
+
+	&--large {
+		// 1660
+		max-width: 1660px;
+
+		@media screen and (max-width: 1760px) {  // 1660 + 2*50p
+			max-width: none;
+			padding: 0px 50px;
+		}
+	}
+	&--xlarge {
+		// 1820
+		max-width: 1820px;
+
+		@media screen and (max-width: 1920px) {  // 1820 + 2*50p
+			max-width: none;
+			padding: 0px 50px;
+		}
+	}
+
+	&--full { // avec %
+		// 90%
+		max-width: none;
+		width: 100%;
+		padding-left: 5%;
+		padding-right: 5%;
+
+		//full devient ensuite un xlarge
+		@media screen and (max-width: 1980px) {
+			max-width: 1780px;
+			padding: 0;
+		}
+		@media screen and (max-width: 1880px) {  // 1780 + 2*50p
+			max-width: none;
+			padding: 0px 50px;
+		}
+	}
+
+	@include w1024-down {
+		padding: 0 5%;
+	}
+
+	&--none { // jamais de wrapper
+		max-width: none !important;
+		width: 100% !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}

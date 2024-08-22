@@ -1,0 +1,1021 @@
+// SETTINGS
+@import "settings/fonts";
+@import "settings/colors";
+
+// GENERIC
+@import "generic/mediaqueries";
+@import "generic/reset";
+
+#app {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $magnolia;
+
+    .wrapper { // wrapper--small
+        width: 100%;
+    }
+
+    .registerContainer {
+        width: 100%;
+        height: 100%;
+        min-height: 700px;
+
+        padding: 20px;
+        border-radius: 10px;
+        background-color: $white;
+
+        display: grid;
+        grid-template-columns: 300px 1fr;
+
+        &__navigatorContainer {
+            width: 100%;
+            padding: 20px;
+
+            background-image: url(../images/bg-sidebar-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
+
+            border-radius: 20px;
+
+            &__navigator {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                row-gap: 15px;
+
+                .step {
+                    width: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    column-gap: 15px;
+
+                    &__number {
+                        padding: 0;
+                        width: 40px;
+                        height: 40px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        border-radius: 100px;
+                        background-color: transparent;
+                        border: 1px solid $alabaster;
+                        box-shadow: none;
+                        color: $textWhite;
+                        font-weight: 500;
+                        font-size: $normal;
+                        cursor: pointer;
+
+                        &--disabled {
+                            cursor: not-allowed;
+                        }
+
+                        span {
+                            color: inherit;
+                            font-weight: inherit;
+                            font-size: inherit;
+                        }
+
+                        svg {
+                            display: none;
+                            width: $large;
+                            height: $large;
+                            fill: $textWhite;
+                        }
+                    }
+
+                    &__content {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 5px;
+
+                        &__step {
+                            color: $lightGray;
+                            font-size: $small;
+                            text-transform: uppercase;
+                        }
+
+                        &__title {
+                            color: $textWhite;
+                            font-size: $small;
+                            text-transform: uppercase;
+                            letter-spacing: 1.5px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    &--active {
+
+                        .step__number {
+                            background-color: $green;
+                            border-color: $green;
+                            color: $text;
+
+                            &--disabled {
+                                cursor: default;
+                            }
+                        }
+                    }
+
+                    &--done {
+
+                        .step__number {
+                            background-color: $green;
+                            border-color: $green;
+
+                            span {
+                                display: none;
+                            }
+
+                            svg {
+                                display: inline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__button {
+                margin-top: auto;
+                cursor: pointer;
+                border: none;
+                background-color: $marineBlueLight;
+                color: $textWhite;
+                padding: 10px 20px;
+                border-radius: 10px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                transition: background-color $ease .3s;
+
+                span {
+                    color: inherit;
+                }
+
+                svg {
+                    font-size: $normal;
+                    color: $textWhite;
+
+                    transform: rotate(180deg);
+                }
+
+                &:hover {
+                    background-color: $marineBlue;
+                }
+            }
+        }
+
+        &__stepsContainer {
+            width: 100%;
+
+            padding-left: 10%;
+            padding-right: 10%;
+
+            &__step {
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                row-gap: 20px;
+
+                &__title {
+                    color: $marineBlue;
+                    font-weight: 500;
+                }
+
+                &__description {}
+
+                &__formContainer {
+                    width: 100%;
+                    height: 100%;
+
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 20px;
+
+                    fieldset {
+                        position: relative;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 10px;
+
+                        > div {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            label {
+                                color: $marineBlue;
+                                font-size: $normal;
+                            }
+
+                            .error {
+                                color: $strawberryRed;
+                                font-size: $normal;
+                                font-weight: 500;
+                            }
+                        }
+
+                        input {
+                            width: 100%;
+                            padding: 15px;
+                            border: 1px solid $lightGray;
+                            border-radius: 10px;
+                            outline: none;
+
+                            color: $marineBlue;
+                            font-size: $normal;
+                            font-weight: 500;
+
+                            transition: border-color $ease .2s;
+
+                            &::placeholder {
+                                color: $coolGray;
+                            }
+
+                            &:hover, &:focus {
+                                border-color: $marineBlueLight;
+                            }
+
+                            &.invalid {
+                                border-color: $strawberryRed;
+                            }
+                        }
+
+                        button.show {
+                            border: none;
+                            background: none;
+                            cursor: pointer;
+                            position: absolute;
+                            right: 15px;
+                            bottom: 17px;
+
+                            &.hidden {
+                                display: none;
+                            }
+
+                            svg {
+                                font-size: $normal;
+                            }
+                        }
+                    }
+
+                    &__buttonContainer {
+                        width: 100%;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        margin-top: auto;
+
+                        &__button {
+                            cursor: pointer;
+                            background-color: transparent;
+                            border: none;
+                            color: rgba($marineBlue, .5);
+                            font-weight: 700;
+                            font-size: $normal;
+
+                            &--submit {
+                                background-color: $marineBlueLight;
+                                color: $textWhite;
+                                border-radius: 5px;
+                                padding: 15px 30px;
+
+                                transition: background-color $ease .2s;
+
+                                &:hover {
+                                    background-color: $purplishBlue;
+                                }
+
+                                &:active {
+                                    background-color: rgba($purplishBlue, .5);
+                                }
+                            }
+                        }
+
+                        &--right {
+                            justify-content: flex-end;
+                        }
+                    }
+
+                    &__plansContainer {
+                        width: 100%;
+
+                        margin-top: 50px;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        column-gap: 20px;
+
+                        &__plan {
+                            width: 100%;
+                            height: 100%;
+
+                            input {
+                                display: none;
+                            }
+
+                            &:has(input:checked) {
+                                label {
+                                    border-color: $marineBlue;
+                                    background-color: rgba($marineBlueLight, .15);
+                                }
+                            }
+
+                            label {
+                                width: 100%;
+                                height: 100%;
+
+                                cursor: pointer;
+                                padding: 20px;
+                                border-radius: 10px;
+                                border: 1px solid rgba($marineBlue, .2);
+
+                                display: flex;
+                                flex-direction: column;
+                                row-gap: 20px;
+
+                                transition-property: border-color, background-color;
+                                transition-timing-function: $ease;
+                                transition-duration: .3s;
+
+                                &:hover {
+                                    border-color: $marineBlue;
+                                }
+
+                                img {
+                                    width: 50px;
+                                    height: auto;
+                                    margin-bottom: 75px;
+                                }
+
+                                > div {
+                                    display: flex;
+                                    flex-direction: column;
+                                    row-gap: 10px;
+
+                                    h4 {
+                                        font-size: $x-large;
+                                        font-weight: 500;
+                                        color: $marineBlue;
+                                    }
+
+                                    small {
+                                        color: rgba($marineBlue, .3);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &__recurrence {
+                        width: 100%;
+                        border-radius: 10px;
+                        background-color: rgba($lightGray, .15);
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        column-gap: 15px;
+                        padding: 20px 0;
+
+                        &__text {
+                            color: $coolGray;
+                            font-size: $large;
+                            font-weight: 500;
+
+                            transition: color $ease .3s;
+
+                            &--current {
+                                color: $marineBlue;
+                            }
+                        }
+
+                        input {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+
+                            cursor: pointer;
+                            position: relative;
+                            width: 50px;
+                            height: 25px;
+                            border-radius: 50px;
+                            background-color: $marineBlue;
+
+                            &:after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                left: 5px;
+                                right: 0;
+                                top: 5px;
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 20px;
+                                background-color: $alabaster;
+
+                                transition-property: left, right;
+                                transition-timing-function: $ease;
+                                transition-duration: .3s;
+                            }
+
+                            &:checked {
+
+                                &:after {
+                                    left: calc(100% - 20px); // 20px -> 5px (padding) + 15px (width of cursor)
+                                }
+                            }
+                        }
+                    }
+
+                    &__addonsContainer {
+                        width: 100%;
+
+                        margin-top: 50px;
+                        display: grid;
+                        grid-template-rows: repeat(3, 1fr);
+                        row-gap: 20px;
+
+                        &__addon {
+                            width: 100%;
+
+                            &:has(input:checked) {
+
+                                label {
+                                    border-color: $marineBlue;
+                                    background-color: rgba($marineBlueLight, .15);
+                                }
+                            }
+
+                            label {
+                                width: 100%;
+
+                                cursor: pointer;
+                                padding: 20px;
+                                border-radius: 10px;
+                                border: 1px solid rgba($marineBlue, .2);
+
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                row-gap: 20px;
+
+                                transition-property: border-color, background-color;
+                                transition-timing-function: $ease;
+                                transition-duration: .3s;
+
+                                &:hover {
+                                    border-color: $marineBlue;
+                                }
+
+                                input {
+                                    appearance: none;
+                                    -webkit-appearance: none;
+                                    -moz-appearance: none;
+
+                                    width: 20px;
+                                    aspect-ratio: 1/1;
+                                    display: block;
+                                    border-radius: 5px;
+                                    border: 1px solid rgba($purplishBlue, .3);
+                                    background-color: transparent;
+
+                                    background-image: url(../images/icon-checkmark.svg);
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+
+                                    &:checked {
+                                        background-color: $purplishBlue;
+                                    }
+                                }
+
+                                div {
+                                    margin-left: 25px;
+
+                                    h4 {
+                                        color: $marineBlue;
+                                        font-size: $large;
+                                        font-weight: 500;
+                                    }
+
+                                    p {
+                                        color: $coolGray;
+                                    }
+                                }
+
+                                small {
+                                    margin-left: auto;
+                                    color: $purplishBlue;
+                                }
+                            }
+                        }
+                    }
+
+                    &__summaryContainer {
+                        width: 100%;
+
+                        padding: 20px 30px;
+                        border-radius: 10px;
+                        background-color: rgba($lightGray, .15);
+
+                        &__planContainer {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding-bottom: 20px;
+                            margin-bottom: 20px;
+                            border-bottom: 1px solid rgba($lightGray, .5);
+
+                            &__content {
+
+                                h4 {
+                                    color: $marineBlue;
+                                    font-size: $large;
+                                    font-weight: 500;
+                                }
+
+                                button {
+                                    font-size: $normal;
+                                    background-color: transparent;
+                                    border: none;
+                                    color: $coolGray;
+                                    padding: 0;
+                                    text-decoration: underline;
+                                    cursor: pointer;
+
+                                    &:hover {
+                                        text-decoration: none;
+                                        color: $purplishBlue;
+                                    }
+                                }
+                            }
+
+                            &__price {
+                                color: $marineBlue;
+                                font-weight: 700;
+                                font-size: $large;
+                            }
+                        }
+
+                        &__addonsContainer {
+                            width: 100%;
+                            margin-bottom: 20px;
+
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 20px;
+
+                            &__addon {
+                                width: 100%;
+
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                h4 {
+                                    font-weight: 500;
+                                    color: rgba($coolGray, .6);
+                                }
+
+                                p {
+                                    font-weight: 500;
+                                    color: rgba($marineBlue, .7);
+                                }
+                            }
+
+                            &__empty {
+                                color: $coolGray;
+                                font-size: $large;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+
+                    &__totalContainer {
+                        width: 100%;
+                        padding: 0 30px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        &__text {
+                            color: rgba($coolGray, .6);
+                            font-weight: 500;
+                        }
+
+                        &__price {
+                            font-size: $x-large;
+                            color: $purplishBlue;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+
+            &__feedback {
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &__img {}
+
+                &__title {
+                    font-weight: 700;
+                    color: $marineBlue;
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                }
+
+                &__description {
+                    text-align: center;
+                    color: rgba($coolGray, .7);
+                    font-weight: 500;
+                    max-width: 500px;
+                }
+
+                &__button {
+                    margin-top: 100px;
+                    cursor: pointer;
+                    border: none;
+                    font-weight: 700;
+                    font-size: $normal;
+                    background-color: $marineBlueLight;
+                    color: $textWhite;
+                    border-radius: 5px;
+                    padding: 15px 30px;
+
+                    transition: background-color $ease .2s;
+
+                    &:hover {
+                        background-color: $purplishBlue;
+                    }
+
+                    &:active {
+                        background-color: rgba($purplishBlue, .5);
+                    }
+                }
+            }
+        }
+
+        &__loadingContainer {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .loginContainer {
+        width: 100%;
+        height: 100%;
+        min-height: 700px;
+
+        padding: 20px;
+        border-radius: 10px;
+        background-color: $white;
+
+        display: grid;
+        grid-template-columns: 1fr 300px;
+
+        &__leftContainer {
+            display: flex;
+            align-items: center;
+
+            padding-left: 10%;
+            padding-right: 10%;
+
+            &__formContainer {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                row-gap: 20px;
+
+                fieldset {
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        label {
+                            color: $marineBlue;
+                            font-size: $normal;
+                        }
+
+                        .error {
+                            color: $strawberryRed;
+                            font-size: $normal;
+                            font-weight: 500;
+                        }
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 15px;
+                        border: 1px solid $lightGray;
+                        border-radius: 10px;
+                        outline: none;
+
+                        color: $marineBlue;
+                        font-size: $normal;
+                        font-weight: 500;
+
+                        transition: border-color $ease .2s;
+
+                        &::placeholder {
+                            color: $coolGray;
+                        }
+
+                        &:hover, &:focus {
+                            border-color: $marineBlueLight;
+                        }
+
+                        &.invalid {
+                            border-color: $strawberryRed;
+                        }
+                    }
+
+                    button.show {
+                        border: none;
+                        background: none;
+                        cursor: pointer;
+                        position: absolute;
+                        right: 15px;
+                        bottom: 17px;
+
+                        &.hidden {
+                            display: none;
+                        }
+
+                        svg {
+                            font-size: $normal;
+                        }
+                    }
+                }
+
+                &__buttonContainer {
+                    width: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    margin-top: auto;
+
+                    &__button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+                        color: rgba($marineBlue, .5);
+                        font-weight: 700;
+                        font-size: $normal;
+
+                        &--submit {
+                            background-color: $marineBlueLight;
+                            color: $textWhite;
+                            border-radius: 5px;
+                            padding: 15px 30px;
+
+                            transition: background-color $ease .2s;
+
+                            &:hover {
+                                background-color: $purplishBlue;
+                            }
+
+                            &:active {
+                                background-color: rgba($purplishBlue, .5);
+                            }
+                        }
+                    }
+
+                    &--right {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+
+        &__rightContainer {
+            border-radius: 20px;
+            padding: 20px;
+
+            background-image: url(../images/bg-sidebar-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            &__title {
+                color: $textWhite;
+                font-weight: 500;
+            }
+
+            &__subTitle {
+                color: rgba($textWhite, .7);
+            }
+
+            &__button {
+                margin-top: auto;
+                cursor: pointer;
+                border: none;
+                background-color: $marineBlueLight;
+                color: $textWhite;
+                padding: 10px 20px;
+                border-radius: 10px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                transition: background-color $ease .3s;
+
+                span {
+                    color: inherit;
+                }
+
+                svg {
+                    font-size: $normal;
+                    color: $textWhite;
+                }
+
+                &:hover {
+                    background-color: $marineBlue;
+                }
+            }
+        }
+    }
+
+    .dashboardContainer {
+        width: 100%;
+        height: 100%;
+        min-height: 700px;
+
+        padding: 20px;
+        border-radius: 20px;
+        background-color: $white;
+
+        display: grid;
+        grid-template-columns: 300px 1fr;
+
+        &__aside {
+            border-radius: 20px;
+            padding: 20px;
+
+            background-image: url(../images/bg-sidebar-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            &__title {
+                color: $textWhite;
+                font-weight: 500;
+            }
+
+            &__button {
+                margin-top: auto;
+                cursor: pointer;
+                border: none;
+                background-color: $marineBlueLight;
+                color: $textWhite;
+                padding: 10px 20px;
+                border-radius: 10px;
+
+                font-size: $normal;
+                line-height: 1.6em;
+                font-weight: 200;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                transition: background-color $ease .3s;
+
+                span {
+                    color: inherit;
+                }
+
+                svg {
+                    font-size: $normal;
+                    color: $textWhite;
+                }
+
+                &:hover {
+                    background-color: $marineBlue;
+                }
+            }
+        }
+
+        &__main {
+            width: 100%;
+
+            padding-left: 10%;
+            padding-right: 10%;
+
+            &__feedback {
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &__img {}
+
+                &__title {
+                    font-weight: 700;
+                    color: $marineBlue;
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                }
+
+                &__description {
+                    text-align: center;
+                    color: rgba($coolGray, .7);
+                    font-weight: 500;
+                    max-width: 500px;
+                }
+
+                &__button {
+                    margin-top: 100px;
+                    cursor: pointer;
+                    border: none;
+                    font-weight: 700;
+                    font-size: $normal;
+                    background-color: $marineBlueLight;
+                    color: $textWhite;
+                    border-radius: 5px;
+                    padding: 15px 30px;
+
+                    transition: background-color $ease .2s;
+
+                    &:hover {
+                        background-color: $purplishBlue;
+                    }
+
+                    &:active {
+                        background-color: rgba($purplishBlue, .5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid $marineBlue;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

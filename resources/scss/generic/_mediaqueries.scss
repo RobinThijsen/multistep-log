@@ -1,0 +1,45 @@
+/*********************************************
+  BREAKPOINTS
+**********************************************/
+// media
+// 1800 - 4K
+// 1600
+// 1400 - BIG SCREENS
+// 1200 - DESKTOP SCREENS
+// 1024 - SMALL SCREENS
+// 900
+// 768 - TABLET
+// 600
+// 480 - MOBILE
+// 400
+
+@mixin w400-down {
+	@media (max-width: 400px) { @content; } 
+}
+@mixin w480-down { //MOBILE
+	@media (max-width: 480px) { @content; }
+}
+@mixin w600-down {
+	@media (max-width: 600px) { @content; }
+}
+@mixin w768-down { //TABLET
+	@media (max-width: 768px) { @content; }
+}
+@mixin w900-down {
+	@media (max-width: 900px) { @content; }
+}
+@mixin w1024-down { //SMALL SCREENS
+	@media (max-width: 1024px) { @content; }
+}
+@mixin w1200-down { //LARGE SCREEN SCREENS
+	@media (max-width: 1200px) { @content; }
+}
+@mixin w1400-down { //BIG
+	@media (max-width: 1400px) { @content; }
+}
+@mixin w1600-down {
+	@media (max-width: 1600px) { @content; }
+}
+@mixin w1800-down { // 4K
+	@media (max-width: 1800px) { @content; }
+}

@@ -1,0 +1,1107 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+/*********************************************
+  BREAKPOINTS
+**********************************************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  border-radius: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, m {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+}
+
+br {
+  padding: 0;
+}
+
+input {
+  font-family: "Ubuntu", sans-serif;
+}
+
+/*********************************************
+  UTILS
+*********************************************/
+* {
+  box-sizing: border-box;
+}
+
+img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+main, svg, button {
+  padding: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+main {
+  display: block;
+}
+
+select {
+  border: none;
+  width: 100%;
+}
+
+strong, em, i, b {
+  display: inline-block;
+}
+
+div, p, li, td, th, label, a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6em;
+  font-weight: 200;
+  color: hsl(0, 0%, 7%);
+}
+
+a {
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1, h1 > a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.618rem;
+  line-height: 1.2em;
+  font-weight: 200;
+}
+
+h2, h2 > a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.058rem;
+  line-height: 1.2em;
+  font-weight: 200;
+}
+
+h3, h3 > a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.272rem;
+  line-height: 1.2em;
+  font-weight: 200;
+}
+
+h4, h4 > a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  line-height: 1.2em;
+  font-weight: 200;
+}
+
+body {
+  min-width: 360px;
+}
+
+div, section {
+  position: relative;
+}
+
+.hide, .hidden {
+  display: none;
+}
+
+/*********************************************
+ 	CAPTCHA
+*********************************************/
+.captcha {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  height: 80px;
+  width: 310px;
+  overflow: hidden;
+  color: hsl(0, 0%, 0%);
+}
+.captcha .g-recaptcha {
+  text-align: center;
+  margin: auto;
+  display: inline-block;
+}
+.captcha .g-recaptcha > div {
+  right: 0;
+}
+
+/*********************************************
+  INPUT
+*********************************************/
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear,
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+  appearance: none;
+  -moz-appearance: none;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/*********************************************
+  WRAPPER
+*********************************************/
+.wrapper {
+  position: relative;
+  max-width: 1560px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+@media screen and (max-width: 1660px) {
+  .wrapper {
+    max-width: none;
+    width: 100%;
+    padding: 0px 50px;
+  }
+}
+.wrapper--small {
+  max-width: 1440px;
+  padding: 0px;
+}
+@media screen and (max-width: 1540px) {
+  .wrapper--small {
+    max-width: none;
+    padding: 0px 50px;
+  }
+}
+.wrapper--smaller {
+  max-width: 1080px;
+  padding: 0px;
+}
+@media screen and (max-width: 1180px) {
+  .wrapper--smaller {
+    max-width: none;
+    padding: 0px 50px;
+  }
+}
+.wrapper--text {
+  max-width: 860px;
+  padding: 0px;
+}
+@media screen and (max-width: 960px) {
+  .wrapper--text {
+    max-width: none;
+    padding: 0px 50px;
+  }
+}
+.wrapper--large {
+  max-width: 1660px;
+}
+@media screen and (max-width: 1760px) {
+  .wrapper--large {
+    max-width: none;
+    padding: 0px 50px;
+  }
+}
+.wrapper--xlarge {
+  max-width: 1820px;
+}
+@media screen and (max-width: 1920px) {
+  .wrapper--xlarge {
+    max-width: none;
+    padding: 0px 50px;
+  }
+}
+.wrapper--full {
+  max-width: none;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+@media screen and (max-width: 1980px) {
+  .wrapper--full {
+    max-width: 1780px;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1880px) {
+  .wrapper--full {
+    max-width: none;
+    padding: 0px 50px;
+  }
+}
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 0 5%;
+  }
+}
+.wrapper--none {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(217, 100%, 97%);
+}
+#app .wrapper {
+  width: 100%;
+}
+#app .registerContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+#app .registerContainer__navigatorContainer {
+  width: 100%;
+  padding: 20px;
+  background-image: url(../images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+#app .registerContainer__navigatorContainer__navigator {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+#app .registerContainer__navigatorContainer__navigator .step {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+#app .registerContainer__navigatorContainer__navigator .step__number {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: transparent;
+  border: 1px solid hsl(231, 100%, 99%);
+  box-shadow: none;
+  color: hsl(231, 100%, 99%);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#app .registerContainer__navigatorContainer__navigator .step__number--disabled {
+  cursor: not-allowed;
+}
+#app .registerContainer__navigatorContainer__navigator .step__number span {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+#app .registerContainer__navigatorContainer__navigator .step__number svg {
+  display: none;
+  width: 1.272rem;
+  height: 1.272rem;
+  fill: hsl(231, 100%, 99%);
+}
+#app .registerContainer__navigatorContainer__navigator .step__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+#app .registerContainer__navigatorContainer__navigator .step__content__step {
+  color: hsl(229, 24%, 87%);
+  font-size: 0.887rem;
+  text-transform: uppercase;
+}
+#app .registerContainer__navigatorContainer__navigator .step__content__title {
+  color: hsl(231, 100%, 99%);
+  font-size: 0.887rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+#app .registerContainer__navigatorContainer__navigator .step--active .step__number {
+  background-color: hsl(182, 43%, 76%);
+  border-color: hsl(182, 43%, 76%);
+  color: hsl(0, 0%, 7%);
+}
+#app .registerContainer__navigatorContainer__navigator .step--active .step__number--disabled {
+  cursor: default;
+}
+#app .registerContainer__navigatorContainer__navigator .step--done .step__number {
+  background-color: hsl(182, 43%, 76%);
+  border-color: hsl(182, 43%, 76%);
+}
+#app .registerContainer__navigatorContainer__navigator .step--done .step__number span {
+  display: none;
+}
+#app .registerContainer__navigatorContainer__navigator .step--done .step__number svg {
+  display: inline;
+}
+#app .registerContainer__navigatorContainer__button {
+  margin-top: auto;
+  cursor: pointer;
+  border: none;
+  background-color: hsl(213, 96%, 22%);
+  color: hsl(231, 100%, 99%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+#app .registerContainer__navigatorContainer__button span {
+  color: inherit;
+}
+#app .registerContainer__navigatorContainer__button svg {
+  font-size: 1rem;
+  color: hsl(231, 100%, 99%);
+  transform: rotate(180deg);
+}
+#app .registerContainer__navigatorContainer__button:hover {
+  background-color: hsl(213, 96%, 18%);
+}
+#app .registerContainer__stepsContainer {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#app .registerContainer__stepsContainer__step {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+#app .registerContainer__stepsContainer__step__title {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+#app .registerContainer__stepsContainer__step__formContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset > div label {
+  color: hsl(213, 96%, 18%);
+  font-size: 1rem;
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset > div .error {
+  color: hsl(354, 84%, 57%);
+  font-size: 1rem;
+  font-weight: 500;
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 10px;
+  outline: none;
+  color: hsl(213, 96%, 18%);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset input::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset input:hover, #app .registerContainer__stepsContainer__step__formContainer fieldset input:focus {
+  border-color: hsl(213, 96%, 22%);
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset input.invalid {
+  border-color: hsl(354, 84%, 57%);
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset button.show {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  bottom: 17px;
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset button.show.hidden {
+  display: none;
+}
+#app .registerContainer__stepsContainer__step__formContainer fieldset button.show svg {
+  font-size: 1rem;
+}
+#app .registerContainer__stepsContainer__step__formContainer__buttonContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+#app .registerContainer__stepsContainer__step__formContainer__buttonContainer__button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: rgba(2, 41, 90, 0.5);
+  font-weight: 700;
+  font-size: 1rem;
+}
+#app .registerContainer__stepsContainer__step__formContainer__buttonContainer__button--submit {
+  background-color: hsl(213, 96%, 22%);
+  color: hsl(231, 100%, 99%);
+  border-radius: 5px;
+  padding: 15px 30px;
+  transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+#app .registerContainer__stepsContainer__step__formContainer__buttonContainer__button--submit:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__buttonContainer__button--submit:active {
+  background-color: rgba(71, 61, 255, 0.5);
+}
+#app .registerContainer__stepsContainer__step__formContainer__buttonContainer--right {
+  justify-content: flex-end;
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer {
+  width: 100%;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan {
+  width: 100%;
+  height: 100%;
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan input {
+  display: none;
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan:has(input:checked) label {
+  border-color: hsl(213, 96%, 18%);
+  background-color: rgba(2, 51, 110, 0.15);
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(2, 41, 90, 0.2);
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  transition-property: border-color, background-color;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 0.3s;
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan label:hover {
+  border-color: hsl(213, 96%, 18%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan label img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 75px;
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan label > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan label > div h4 {
+  font-size: 1.618rem;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__plansContainer__plan label > div small {
+  color: rgba(2, 41, 90, 0.3);
+}
+#app .registerContainer__stepsContainer__step__formContainer__recurrence {
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgba(214, 217, 230, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 15px;
+  padding: 20px 0;
+}
+#app .registerContainer__stepsContainer__step__formContainer__recurrence__text {
+  color: hsl(231, 11%, 63%);
+  font-size: 1.272rem;
+  font-weight: 500;
+  transition: color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+#app .registerContainer__stepsContainer__step__formContainer__recurrence__text--current {
+  color: hsl(213, 96%, 18%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__recurrence input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 25px;
+  border-radius: 50px;
+  background-color: hsl(213, 96%, 18%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__recurrence input:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5px;
+  right: 0;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 20px;
+  background-color: hsl(231, 100%, 99%);
+  transition-property: left, right;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 0.3s;
+}
+#app .registerContainer__stepsContainer__step__formContainer__recurrence input:checked:after {
+  left: calc(100% - 20px);
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer {
+  width: 100%;
+  margin-top: 50px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 20px;
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon {
+  width: 100%;
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon:has(input:checked) label {
+  border-color: hsl(213, 96%, 18%);
+  background-color: rgba(2, 51, 110, 0.15);
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon label {
+  width: 100%;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(2, 41, 90, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 20px;
+  transition-property: border-color, background-color;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 0.3s;
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon label:hover {
+  border-color: hsl(213, 96%, 18%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon label input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  aspect-ratio: 1/1;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid rgba(71, 61, 255, 0.3);
+  background-color: transparent;
+  background-image: url(../images/icon-checkmark.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon label input:checked {
+  background-color: hsl(243, 100%, 62%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon label div {
+  margin-left: 25px;
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon label div h4 {
+  color: hsl(213, 96%, 18%);
+  font-size: 1.272rem;
+  font-weight: 500;
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon label div p {
+  color: hsl(231, 11%, 63%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__addonsContainer__addon label small {
+  margin-left: auto;
+  color: hsl(243, 100%, 62%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer {
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: rgba(214, 217, 230, 0.15);
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__planContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(214, 217, 230, 0.5);
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__planContainer__content h4 {
+  color: hsl(213, 96%, 18%);
+  font-size: 1.272rem;
+  font-weight: 500;
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__planContainer__content button {
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  color: hsl(231, 11%, 63%);
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__planContainer__content button:hover {
+  text-decoration: none;
+  color: hsl(243, 100%, 62%);
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__planContainer__price {
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+  font-size: 1.272rem;
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__addonsContainer {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__addonsContainer__addon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__addonsContainer__addon h4 {
+  font-weight: 500;
+  color: rgba(150, 153, 171, 0.6);
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__addonsContainer__addon p {
+  font-weight: 500;
+  color: rgba(2, 41, 90, 0.7);
+}
+#app .registerContainer__stepsContainer__step__formContainer__summaryContainer__addonsContainer__empty {
+  color: hsl(231, 11%, 63%);
+  font-size: 1.272rem;
+  font-weight: 500;
+}
+#app .registerContainer__stepsContainer__step__formContainer__totalContainer {
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#app .registerContainer__stepsContainer__step__formContainer__totalContainer__text {
+  color: rgba(150, 153, 171, 0.6);
+  font-weight: 500;
+}
+#app .registerContainer__stepsContainer__step__formContainer__totalContainer__price {
+  font-size: 1.618rem;
+  color: hsl(243, 100%, 62%);
+  font-weight: 700;
+}
+#app .registerContainer__stepsContainer__feedback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#app .registerContainer__stepsContainer__feedback__title {
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+#app .registerContainer__stepsContainer__feedback__description {
+  text-align: center;
+  color: rgba(150, 153, 171, 0.7);
+  font-weight: 500;
+  max-width: 500px;
+}
+#app .registerContainer__stepsContainer__feedback__button {
+  margin-top: 100px;
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: hsl(213, 96%, 22%);
+  color: hsl(231, 100%, 99%);
+  border-radius: 5px;
+  padding: 15px 30px;
+  transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+#app .registerContainer__stepsContainer__feedback__button:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+#app .registerContainer__stepsContainer__feedback__button:active {
+  background-color: rgba(71, 61, 255, 0.5);
+}
+#app .registerContainer__loadingContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#app .loginContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+#app .loginContainer__leftContainer {
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#app .loginContainer__leftContainer__formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+#app .loginContainer__leftContainer__formContainer fieldset {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#app .loginContainer__leftContainer__formContainer fieldset > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#app .loginContainer__leftContainer__formContainer fieldset > div label {
+  color: hsl(213, 96%, 18%);
+  font-size: 1rem;
+}
+#app .loginContainer__leftContainer__formContainer fieldset > div .error {
+  color: hsl(354, 84%, 57%);
+  font-size: 1rem;
+  font-weight: 500;
+}
+#app .loginContainer__leftContainer__formContainer fieldset input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 10px;
+  outline: none;
+  color: hsl(213, 96%, 18%);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+#app .loginContainer__leftContainer__formContainer fieldset input::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+#app .loginContainer__leftContainer__formContainer fieldset input:hover, #app .loginContainer__leftContainer__formContainer fieldset input:focus {
+  border-color: hsl(213, 96%, 22%);
+}
+#app .loginContainer__leftContainer__formContainer fieldset input.invalid {
+  border-color: hsl(354, 84%, 57%);
+}
+#app .loginContainer__leftContainer__formContainer fieldset button.show {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  bottom: 17px;
+}
+#app .loginContainer__leftContainer__formContainer fieldset button.show.hidden {
+  display: none;
+}
+#app .loginContainer__leftContainer__formContainer fieldset button.show svg {
+  font-size: 1rem;
+}
+#app .loginContainer__leftContainer__formContainer__buttonContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+#app .loginContainer__leftContainer__formContainer__buttonContainer__button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: rgba(2, 41, 90, 0.5);
+  font-weight: 700;
+  font-size: 1rem;
+}
+#app .loginContainer__leftContainer__formContainer__buttonContainer__button--submit {
+  background-color: hsl(213, 96%, 22%);
+  color: hsl(231, 100%, 99%);
+  border-radius: 5px;
+  padding: 15px 30px;
+  transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+#app .loginContainer__leftContainer__formContainer__buttonContainer__button--submit:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+#app .loginContainer__leftContainer__formContainer__buttonContainer__button--submit:active {
+  background-color: rgba(71, 61, 255, 0.5);
+}
+#app .loginContainer__leftContainer__formContainer__buttonContainer--right {
+  justify-content: flex-end;
+}
+#app .loginContainer__rightContainer {
+  border-radius: 20px;
+  padding: 20px;
+  background-image: url(../images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#app .loginContainer__rightContainer__title {
+  color: hsl(231, 100%, 99%);
+  font-weight: 500;
+}
+#app .loginContainer__rightContainer__subTitle {
+  color: rgba(250, 251, 255, 0.7);
+}
+#app .loginContainer__rightContainer__button {
+  margin-top: auto;
+  cursor: pointer;
+  border: none;
+  background-color: hsl(213, 96%, 22%);
+  color: hsl(231, 100%, 99%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+#app .loginContainer__rightContainer__button span {
+  color: inherit;
+}
+#app .loginContainer__rightContainer__button svg {
+  font-size: 1rem;
+  color: hsl(231, 100%, 99%);
+}
+#app .loginContainer__rightContainer__button:hover {
+  background-color: hsl(213, 96%, 18%);
+}
+#app .dashboardContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+#app .dashboardContainer__aside {
+  border-radius: 20px;
+  padding: 20px;
+  background-image: url(../images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#app .dashboardContainer__aside__title {
+  color: hsl(231, 100%, 99%);
+  font-weight: 500;
+}
+#app .dashboardContainer__aside__button {
+  margin-top: auto;
+  cursor: pointer;
+  border: none;
+  background-color: hsl(213, 96%, 22%);
+  color: hsl(231, 100%, 99%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.6em;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+#app .dashboardContainer__aside__button span {
+  color: inherit;
+}
+#app .dashboardContainer__aside__button svg {
+  font-size: 1rem;
+  color: hsl(231, 100%, 99%);
+}
+#app .dashboardContainer__aside__button:hover {
+  background-color: hsl(213, 96%, 18%);
+}
+#app .dashboardContainer__main {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#app .dashboardContainer__main__feedback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#app .dashboardContainer__main__feedback__title {
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+#app .dashboardContainer__main__feedback__description {
+  text-align: center;
+  color: rgba(150, 153, 171, 0.7);
+  font-weight: 500;
+  max-width: 500px;
+}
+#app .dashboardContainer__main__feedback__button {
+  margin-top: 100px;
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: hsl(213, 96%, 22%);
+  color: hsl(231, 100%, 99%);
+  border-radius: 5px;
+  padding: 15px 30px;
+  transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+#app .dashboardContainer__main__feedback__button:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+#app .dashboardContainer__main__feedback__button:active {
+  background-color: rgba(71, 61, 255, 0.5);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid hsl(213, 96%, 18%);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

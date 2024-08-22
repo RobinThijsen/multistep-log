@@ -17,9 +17,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'plan_id',
+        'plan_recurrence_id',
         'name',
         'email',
+        'phone',
         'password',
+        'email_verified_at',
+        'plan_started_at',
+        'plan_ended_at',
     ];
 
     /**
@@ -43,5 +49,20 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
+
+    public function planRecurrence()
+    {
+        return $this->belongsTo(PlanRecurrence::class);
+    }
+
+    public function planAddons()
+    {
+        return $this->belongsToMany(PlanAddon::class);
     }
 }
