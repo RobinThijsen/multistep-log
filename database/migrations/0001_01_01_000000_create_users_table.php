@@ -45,8 +45,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->timestamp('plan_started_at');
-            $table->timestamp('plan_ended_at');
+            $table->timestamp('plan_started_at')->nullable();
+            $table->timestamp('plan_ended_at')->nullable();
 
             $table->foreign('plan_id')->references('id')->on('plans')->onUpdate('cascade')->onDelete('set null');
             $table->foreign('plan_recurrence_id')->references('id')->on('plan_recurrences')->onUpdate('cascade')->onDelete('set null');
